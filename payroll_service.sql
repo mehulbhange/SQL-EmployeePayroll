@@ -30,4 +30,13 @@ mysql> create table employee_payroll
     -> start_date DATE
     -> );
 Query OK, 0 rows affected (0.04 sec)
-
+mysql> describe employee_payroll;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int          | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(150) | YES  |     | NULL    |                |
+| salary     | int          | YES  |     | NULL    |                |
+| start_date | date         | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
