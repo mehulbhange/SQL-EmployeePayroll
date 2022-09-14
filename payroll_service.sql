@@ -50,3 +50,14 @@ Query OK, 1 row affected (0.01 sec)
 
 mysql> INSERT INTO employee_payroll (name,salary,start_date) VALUES('Charlie',30000,'2020-05-21');
 Query OK, 1 row affected (0.01 sec)
+
+/*UC4*/
+mysql> select * from employee_payroll;
++----+---------+--------+------------+
+| id | name    | salary | start_date |
++----+---------+--------+------------+
+|  1 | Bill    |  10000 | 2018-01-03 |
+|  2 | Mark    |  20000 | 2019-11-13 |
+|  3 | Charlie |  30000 | 2020-05-21 |
++----+---------+--------+------------+
+3 rows in set (0.00 sec)
