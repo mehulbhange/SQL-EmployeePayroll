@@ -139,3 +139,18 @@ mysql> SELECT gender, COUNT(*) FROM employee_payroll GROUP BY gender;
 | F      |        1 |
 +--------+----------+
 2 rows in set (0.00 sec)
+
+/*UC8*/
+mysql> ALTER TABLE employee_payroll ADD phone varchar(10);
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE employee_payroll ADD address varchar(150) default 'pune';
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE employee_payroll ADD department varchar(50) NOT NULL;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
