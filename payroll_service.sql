@@ -40,3 +40,13 @@ mysql> describe employee_payroll;
 | start_date | date         | YES  |     | NULL    |                |
 +------------+--------------+------+-----+---------+----------------+
 4 rows in set (0.01 sec)
+
+/*UC3*/
+mysql> INSERT INTO employee_payroll (name,salary,start_date) VALUES('Bill',10000,'2018-01-03');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO employee_payroll (name,salary,start_date) VALUES('Mark',20000,'2019-11-13');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO employee_payroll (name,salary,start_date) VALUES('Charlie',30000,'2020-05-21');
+Query OK, 1 row affected (0.01 sec)
