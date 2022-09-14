@@ -80,3 +80,12 @@ mysql> SELECT salary FROM employee_payroll WHERE start_date BETWEEN CAST('2018-0
 |  30000 |
 +--------+
 3 rows in set (0.01 sec)
+
+/*UC6*/
+mysql> ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE employee_payroll set gender = 'M' WHERE name = 'Bill' or name = 'Charlie';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
