@@ -89,3 +89,53 @@ Records: 0  Duplicates: 0  Warnings: 0
 mysql> UPDATE employee_payroll set gender = 'M' WHERE name = 'Bill' or name = 'Charlie';
 Query OK, 2 rows affected (0.01 sec)
 Rows matched: 2  Changed: 2  Warnings: 0
+
+/*UC7*/
+mysql> SELECT SUM(salary) FROM employee_payroll WHERE gender = 'M' GROUP BY gender;
++-------------+
+| SUM(salary) |
++-------------+
+|       60000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT AVG(salary) FROM employee_payroll;
++-------------+
+| AVG(salary) |
++-------------+
+|  25000.0000 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT MIN(salary) FROM employee_payroll WHERE gender = 'M';
++-------------+
+| MIN(salary) |
++-------------+
+|       10000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT MAX(salary) FROM employee_payroll;
++-------------+
+| MAX(salary) |
++-------------+
+|       40000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(*) FROM employee_payroll;
++----------+
+| COUNT(*) |
++----------+
+|        4 |
++----------+
+1 row in set (0.02 sec)
+
+mysql> SELECT gender, COUNT(*) FROM employee_payroll GROUP BY gender;
++--------+----------+
+| gender | COUNT(*) |
++--------+----------+
+| M      |        3 |
+| F      |        1 |
++--------+----------+
+2 rows in set (0.00 sec)
