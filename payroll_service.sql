@@ -21,3 +21,13 @@ mysql> show databases;
 
 mysql> use payroll_service;
 Database changed
+
+/*UC2*/
+mysql> create table employee_payroll
+    -> (id int PRIMARY KEY AUTO_INCREMENT,
+    -> name VARCHAR(150),
+    -> salary INT,
+    -> start_date DATE
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
