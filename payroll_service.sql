@@ -174,3 +174,26 @@ Records: 0  Duplicates: 0  Warnings: 0
 mysql> ALTER TABLE employee_payroll ADD COLUMN net_pay INT;
 Query OK, 0 rows affected (0.03 sec)
 Records: 0  Duplicates: 0  Warnings: 0
+
+/* UC10 */
+mysql> INSERT INTO employee_payroll (name,gender,basic_pay,start_date,phone,address,department,deductions,taxable_pay,income_tax,net_pay) VALUES
+    -> ('Terissa','F',20000,'2020-10-01','1010101010','mumbai','sales',1000,100,100,18000);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO employee_payroll (name,gender,basic_pay,start_date,phone,address,department,deductions,taxable_pay,income_tax,net_pay) VALUES
+    ->  ('Terissa','F',20000,'2020-10-01','1010101010','mumbai','marketing',1000,100,100,18000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from employee_payroll;
++----+---------+--------+-----------+------------+------------+---------+------------+------------+-------------+------------+---------+
+| id | name    | gender | basic_pay | start_date | phone      | address | department | deductions | taxable_pay | income_tax | net_pay |
++----+---------+--------+-----------+------------+------------+---------+------------+------------+-------------+------------+---------+
+|  1 | Bill    | M      |     10000 | 2018-01-03 | NULL       | pune    |            |       NULL |        NULL |       NULL |    NULL |
+|  2 | Mark    | M      |     20000 | 2019-11-13 | NULL       | pune    |            |       NULL |        NULL |       NULL |    NULL |
+|  3 | Charlie | M      |     30000 | 2020-05-21 | NULL       | pune    |            |       NULL |        NULL |       NULL |    NULL |
+|  4 | Eva     | F      |     40000 | 2019-02-01 | NULL       | pune    |            |       NULL |        NULL |       NULL |    NULL |
+|  5 | Terissa | F      |     20000 | 2020-10-01 | 1010101010 | mumbai  | sales      |       1000 |         100 |        100 |   18000 |
+|  6 | Terissa | F      |     20000 | 2020-10-01 | 1010101010 | mumbai  | marketing  |       1000 |         100 |        100 |   18000 |
++----+---------+--------+-----------+------------+------------+---------+------------+------------+-------------+------------+---------+
+6 rows in set (0.00 sec)
+
