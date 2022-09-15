@@ -197,3 +197,38 @@ mysql> select * from employee_payroll;
 +----+---------+--------+-----------+------------+------------+---------+------------+------------+-------------+------------+---------+
 6 rows in set (0.00 sec)
 
+/* UC11 */
+
+mysql> CREATE TABLE payroll
+    -> (
+    -> payroll_id INT PRIMARY KEY,
+    -> basic_pay DOUBLE NOT NULL,
+    -> employee_id INT,
+    -> FOREIGN KEY (employee_id) REFERENCES employee_payroll(id)
+    -> );
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> CREATE TABLE company
+    -> (
+    -> company_id INT PRIMARY KEY,
+    -> company_name VARCHAR(50) NOT NULL,
+    -> employee_id INT,
+    -> FOREIGN KEY (employee_id) REFERENCES employee_payroll(id)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> CREATE TABLE department
+    -> (
+    -> dept_id INT PRIMARY KEY,
+    -> dept_name VARCHAR(50) NOT NULL
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE dept_employee
+    -> (
+    -> dept_id INT NOT NULL,
+    -> emp_id INT NOT NULL,
+    -> FOREIGN KEY (dept_id) REFERENCES department(dept_id),
+    -> FOREIGN KEY (emp_id) REFERENCES employee_payroll(id)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
